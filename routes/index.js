@@ -17,7 +17,7 @@ router.get('/credits', function(req, res, next) {
 router.get('/quizzes', function(req, res, next) {
     sequelize.models.quiz.findAll().
     then( quizzes => {
-        res.render('quizzes', {quizzes});
+        res.render('quizzes', {quizzes, title:'Quiz List'});
 })
 .catch(Sequelize.ValidationError, error => {
     })
